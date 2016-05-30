@@ -4,8 +4,8 @@ Convert hexadecimal input to syllables
 syl reads a hexadecimal input and converts it to
 syllables that are easy to transmit for humans.
 Example:
-    $ echo F401B966 | syl
-    bonnec-pardyl
+     $ echo F401B966 | syl
+     bonnec-pardyl
 
 Requirements
 ------------
