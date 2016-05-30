@@ -1,0 +1,37 @@
+.TH SYL 1
+.SH SYL
+syl \- convert from hexadecimal to syllables
+
+.SH SYNOPSIS
+syl -[ed]
+
+.SH DESCRIPTION
+syl reads either pairs of hexadecimal numbers (-e, default) or syllables (-d) from stdin
+and converts them into each other. The syllables are urbit syllables and
+pairs of them are separated by dashes ('-').
+
+.SH EXAMPLE
+.TP
+.B $ echo FFFF | syl
+.TP
+.B fapfes
+.TP
+convert from hexadecimal to urbit syllables.
+.TP
+.B $ echo digpet-novdex | syl -d
+.TP
+.B C145463A
+.TP
+convert syllables to hexadecimal.
+
+.SH STATUS
+0 on success and 1 when it prints the help message.
+
+.SH BUGS
+I am inexperienced with myrddin, so there may be
+more elegant solutions to what I did.
+.TP
+It does not work yet.
+
+.SH AUTHOR
+pranomostro (a.regenfuss@gmx.de)
