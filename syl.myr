@@ -12,7 +12,20 @@ const dex = ["zod", "nec", "bud", "wes", "sev", "per", "sut", "let", "ful", "pen
 
 const main = {args : byte[:][:]
 	var input=bio.mkfile(std.In, bio.Rd)
-	var i, b
+	var i, b, cmd, syl
+
+	cmd=std.optparse(args, &[
+		.opts=[
+			[.opt='s', .desc="read syllables instead of hexadecimal input"]
+		][:]
+	])
+
+	for opt in cmd.opts
+		match opt
+		| ('s', ""):	syl=true
+		| _:	std.die("unreachable\n")
+		;;
+	;;
 
 	for line in bio.byline(input)
 		for i=0; i<line.len; i+=2
