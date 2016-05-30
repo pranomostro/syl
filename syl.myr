@@ -12,9 +12,18 @@ const dex = ["zod", "nec", "bud", "wes", "sev", "per", "sut", "let", "ful", "pen
 
 const main = {args : byte[:][:]
 	var input=bio.mkfile(std.In, bio.Rd);
+	var i, b1, b2;
 
-	for l in bio.byline(input)
-		std.put("{}{}\n", sis[std.get(hd(l[0]))<<4|std.get(hd(l[1]))], dex[std.get(hd(l[2]))<<4|std.get(hd(l[3]))]);
+	for line in bio.byline(input)
+		for i=0; i<line.len-4; i+=4
+			b1=sis[std.get(hd(line[i]))<<4|std.get(hd(line[i+1]))];
+			b2=dex[std.get(hd(line[i+2]))<<4|std.get(hd(line[i+3]))];
+			std.put("{}{}-", b1, b2);
+		;;
+
+		b1=sis[std.get(hd(line[i]))<<4|std.get(hd(line[i+1]))];
+		b2=dex[std.get(hd(line[i+2]))<<4|std.get(hd(line[i+3]))];
+		std.put("{}{}\n", b1, b2);
 	;;
 }
 
