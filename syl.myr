@@ -30,10 +30,15 @@ const main = {args : byte[:][:]
 	for line in bio.byline(input)
 		if syl
 			for i=its=0; i<line.len-2; i+=3
+				/*this is kinda inefficient*/
+				/*better idea: a custom datastructure, where key and value are interchangeable*/
 				if its%2==0
 					p=std.get(std.lsearch(sis[:], line[i:i+3], std.strcmp))
 				else
 					p=std.get(std.lsearch(dex[:], line[i:i+3], std.strcmp))
+				;;
+				if p<=15
+					std.put("0")
 				;;
 				std.put("{x}", p)
 				if (its+1)%8==0
