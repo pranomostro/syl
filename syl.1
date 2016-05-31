@@ -6,9 +6,12 @@ syl \- convert from hexadecimal to syllables
 syl [-s]
 
 .SH DESCRIPTION
-syl reads either pairs of hexadecimal numbers (default) or syllables (-s) from stdin
-and converts them into each other. The syllables are urbit syllables and
-pairs of them are separated by dashes ('-').
+syl reads either pairs of hexadecimal numbers (default) or syllables
+(-s) from stdin and converts them into each other. The syllables are
+urbit syllables- pairs of them are separated by dashes ('-'), groups of
+four are separated by double-dashes ('--'). If the number of characters
+in a hexadecimal input line is odd, the last character is ignored.
+Chars in the hexadecimal input have to be uppercase.
 
 .SH EXAMPLE
 .TP

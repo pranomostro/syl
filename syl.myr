@@ -28,21 +28,26 @@ const main = {args : byte[:][:]
 	;;
 
 	for line in bio.byline(input)
-		for i=0; i<line.len; i+=2
-			if i%4==0
-				b=sis[std.get(hd(line[i]))<<4|std.get(hd(line[i+1]))]
-			else
-				b=dex[std.get(hd(line[i]))<<4|std.get(hd(line[i+1]))]
-			;;
+		if syl
+			/*well*/
+			/*do this later*/
+		else
+			for i=0; i<line.len-1; i+=2
+				if i%4==0
+					b=sis[std.get(hd(line[i]))<<4|std.get(hd(line[i+1]))]
+				else
+					b=dex[std.get(hd(line[i]))<<4|std.get(hd(line[i+1]))]
+				;;
 
-			std.put("{}", b)
-			if (i+2)%16==0&&i<line.len-2
-				std.put("--")
-			elif (i+2)%4==0&&i<line.len-2
-				std.put("-")
+				std.put("{}", b)
+				if (i+2)%16==0&&i<line.len-2
+					std.put("--")
+				elif (i+2)%4==0&&i<line.len-2
+					std.put("-")
+				;;
 			;;
+			std.put("\n")
 		;;
-		std.put("\n")
 	;;
 }
 
