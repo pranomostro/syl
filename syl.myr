@@ -37,10 +37,7 @@ const main = {args : byte[:][:]
 				else
 					p=std.get(std.lsearch(dex[:], line[i:i+3], std.strcmp))
 				;;
-				if p<=15
-					std.put("0")
-				;;
-				std.put("{x}", p)
+				std.put("{p=0,w=2,x}", p)
 				if (its+1)%8==0
 					i+=2
 				elif (its+1)%2==0
