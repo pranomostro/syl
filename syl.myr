@@ -12,7 +12,7 @@ const dex = ["zod", "nec", "bud", "wes", "sev", "per", "sut", "let", "ful", "pen
 
 const main = {args : byte[:][:]
 	var input=bio.mkfile(std.In, bio.Rd)
-	var i, b, cmd, syl
+	var i, b, p, its, cmd, syl
 
 	cmd=std.optparse(args, &[
 		.opts=[
@@ -29,14 +29,27 @@ const main = {args : byte[:][:]
 
 	for line in bio.byline(input)
 		if syl
-			/*well*/
-			/*do this later*/
+			for i=its=0; i<line.len-2; i+=3
+				if its%2==0
+					p=std.get(std.lsearch(sis[:], line[i:i+3], std.strcmp))
+				else
+					p=std.get(std.lsearch(dex[:], line[i:i+3], std.strcmp))
+				;;
+				std.put("{x}", p)
+				if (its+1)%8==0
+					i+=2
+				elif (its+1)%2==0
+					i++
+				;;
+				its++
+			;;
+			std.put("\n")
 		else
 			for i=0; i<line.len-1; i+=2
 				if i%4==0
-					b=sis[std.get(hd(line[i]))<<4|std.get(hd(line[i+1]))]
+					b=sis[std.get(tn(line[i]))<<4|std.get(tn(line[i+1]))]
 				else
-					b=dex[std.get(hd(line[i]))<<4|std.get(hd(line[i+1]))]
+					b=dex[std.get(tn(line[i]))<<4|std.get(tn(line[i+1]))]
 				;;
 
 				std.put("{}", b)
@@ -51,11 +64,11 @@ const main = {args : byte[:][:]
 	;;
 }
 
-const hd = {c : byte
+const tn = {c : byte
 	if c>=48&&c<=57
 		-> `Some c-48
-	elif c>=65&&c<=70
-		-> `Some c-65+10
+	elif c>=97&&c<=103
+		-> `Some c-97+10
 	else
 		-> `None
 	;;
