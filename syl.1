@@ -15,22 +15,31 @@ urbit syllables.
 convert urbit syllables to hexadecimal, the default is the other way around.
 
 .SH EXAMPLES
-.P
-.B $ echo ffff | syl
+.PP
+.fi
+.RS
+$ echo ffff | syl
 .br
-.B fapfes
-.TP
-convert from hexadecimal to urbit syllables.
-.P
-.B $ echo digpet-novdex | syl -s
+fapfes
+.RE
+.fi
+converts from hexadecimal to urbit syllables.
+.PP
+.fi
+.RS
+$ echo digpet-novdex | syl -s
 .br
-.B c1454639
-.TP
-convert syllables to hexadecimal.
-.TP
-.B $ md5sum /bin/ls | awk '{ print($1) }' | syl
-.TP
-Convert the md5sum of /bin/ls to an urbit syllable string.
+c1454639
+.RE
+.fi
+converts syllables to hexadecimal.
+.PP
+.fi
+.RS
+$ md5sum /bin/ls | awk '{ print($1) }' | syl
+.RE
+.fi
+converts the md5sum of /bin/ls to an urbit syllable string.
 
 .SH STATUS
 0 on success and 1 when it prints the usage.
