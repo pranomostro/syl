@@ -44,9 +44,9 @@ const main = {args : byte[:][:]
 		else
 			for i=0; i<line.len-1; i+=2
 				if i%4==0
-					b=sis[std.get(tn(line[i]))<<4|std.get(tn(line[i+1]))]
+					b=sis[std.intparsebase(line[i:i+2], 16)']
 				else
-					b=dex[std.get(tn(line[i]))<<4|std.get(tn(line[i+1]))]
+					b=dex[std.intparsebase(line[i:i+2], 16)']
 				;;
 
 				std.put("{}", b)
@@ -58,15 +58,5 @@ const main = {args : byte[:][:]
 			;;
 			std.put("\n")
 		;;
-	;;
-}
-
-const tn = {c : byte
-	if c>=48&&c<=57
-		-> `std.Some c-48
-	elif c>=97&&c<=103
-		-> `std.Some c-97+10
-	else
-		-> `std.None
 	;;
 }
