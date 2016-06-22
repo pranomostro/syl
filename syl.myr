@@ -44,9 +44,9 @@ const main = {args : byte[:][:]
 		else
 			for i=0; i<line.len-1; i+=2
 				if i%4==0
-					b=sis[std.intparsebase(line[i:i+2], 16)']
+					b=sis[std.get(std.intparsebase(line[i:i+2], 16))]
 				else
-					b=dex[std.intparsebase(line[i:i+2], 16)']
+					b=dex[std.get(std.intparsebase(line[i:i+2], 16))]
 				;;
 
 				std.put("{}", b)
