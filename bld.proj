@@ -1,3 +1,5 @@
 bin syl =
 	syl.myr
 ;;
+
+man = syl.1
