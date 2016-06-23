@@ -7,7 +7,7 @@ const dex = ["zod", "nec", "bud", "wes", "sev", "per", "sut", "let", "ful", "pen
 
 const main = {args : byte[:][:]
 	var input=bio.mkfile(std.In, bio.Rd)
-	var i, b, p, its, cmd, syl
+	var i, b, p, its, cmd, syl=false
 
 	cmd=std.optparse(args, &[
 		.opts=[
