@@ -26,4 +26,4 @@ to install syl on your system.
 License
 =======
 
-See the file ./COPYING.
+See the file ./LICENSE.
