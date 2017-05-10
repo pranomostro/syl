@@ -1,8 +1,9 @@
 Convert hexadecimal input to syllables
 ======================================
 
-syl reads a hexadecimal input and converts it to
-syllables that are easy to transmit for humans.
+syl reads a hexadecimal input and converts it to syllables that are easy
+to read and transmit for humans.
+
 Example:
 
      $ echo f401b966 | syl
@@ -12,7 +13,6 @@ Requirements
 ------------
 
 * [the myrddin compiler and standard library](https://www.github.com/oridb/mc)
-* optional: mbld (included with the standard myrddin compiler)
 
 Installation
 ------------
@@ -26,4 +26,4 @@ to install syl on your system.
 License
 =======
 
-See the file ./LICENSE.
+See [LICENSE](./LICENSE).

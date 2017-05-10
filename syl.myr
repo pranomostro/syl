@@ -25,8 +25,6 @@ const main = {args : byte[:][:]
 	for line in bio.byline(input)
 		if syl
 			for i=its=0; i<line.len-2; i+=3
-				/*this is kinda inefficient*/
-				/*better idea: a custom datastructure, where key and value are interchangeable*/
 				if its%2==0
 					p=std.get(std.lsearch(sis[:], line[i:i+3], std.strcmp))
 				else
