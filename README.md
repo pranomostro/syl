@@ -6,8 +6,8 @@ to read and transmit for humans.
 
 Example:
 
-     $ echo f401b966 | syl
-     bonnec-pardyl
+	$ echo f401b966 | syl
+	bonnec-pardyl
 
 Requirements
 ------------
