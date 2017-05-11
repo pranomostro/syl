@@ -1,56 +1,51 @@
-.TH SYL 1
-.SH SYL
-syl \- convert from hexadecimal to syllables
+.Dd May 11, 2017
+.Dt TEMPLATE 1
+.Os
 
-.SH SYNOPSIS
-syl [-s]
+.Sh NAME
+.Nm syl
+.Nd convert from hexadecimal to syllables and vice versa
 
-.SH DESCRIPTION
-syl reads hexadecimal input (pairs of [0-9a-f]) and converts it to
-urbit syllables.
+.Sh SYNOPSIS
+.Nm
+.Op Fl s
 
-.SH OPTIONS
-.TP
-.BI \-s
-convert urbit syllables to hexadecimal, the default is the other way around.
+.Sh DESCRIPTION
+.Nm
+reads hexadecimal input (pairs of [0-9a-f]) and converts it to urbit
+syllables, or reads urbit syllables and converts them back. It does so
+linewise.
 
-.SH EXAMPLES
-.PP
-.fi
-.RS
-$ echo ffff | syl
-.br
-fapfes
-.RE
-.fi
-converts from hexadecimal to urbit syllables.
-.PP
-.fi
-.RS
-$ echo digpet-novdex | syl -s
-.br
-c1454639
-.RE
-.fi
-converts syllables to hexadecimal.
-.PP
-.fi
-.RS
-$ md5sum /bin/ls | awk '{ print($1) }' | syl
-.RE
-.fi
-converts the md5sum of /bin/ls to an urbit syllable string.
+.Sh OPTIONS
+.Bl -tag -width Ds
+.It Fl s
+Convert syllables to hexadecimal input, the default is the other
+way around.
 
-.SH STATUS
-0 on success and 1 when it prints the usage.
+.Sh EXAMPLES
+Convert from hexadecimal to syllables:
+.Pp
+.Dl $ echo ffff | syl
+.Dl fapfes
+.Pp
+Convert syllables to hexadecimal:
+.Pp
+.Dl $ echo digpet-novdex | syl -s
+.Dl c1454639
+.Pp
+Convert an md5sum to a syllable string:
+.Pp
+.Dl $ md5sum /bin/ls | awk '{ print($1) }' | syl
+.Dl witsul-posten-bollen-dacdus--posdeg-rolluc-fonwyx-nopsup
 
-.SH BUGS
-None known at the moment.
+.Sh EXIT STATUS
+.Ex -std
 
-.SH "SEE ALSO"
-.IR urbit(1).
-I hope 1 is the right section, I don't want Mencious
-Moldbug screaming at me...
+.Sh SEE ALSO
+.Xr awk ,
+.Xr echo 1 ,
+.Xr md5sum ,
+.Xr urbit 1 .
 
-.SH AUTHOR
-pranomostro (pranomestro@gmail.com)
+.Sh AUTHORS
+.An pranomostro Aq Mt pranomestro@gmail.com
