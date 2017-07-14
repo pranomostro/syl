@@ -40,7 +40,7 @@ const main={args : byte[:][:]
 			;;
 			std.put("\n")
 		else
-			for i=0; i<line.len-1; i+=2
+			for i=0; i<line.len-(line.len%2); i+=2
 				if i%4==0
 					b=sis[std.get(std.intparsebase(line[i:i+2], 16))]
 				else
@@ -48,9 +48,9 @@ const main={args : byte[:][:]
 				;;
 
 				std.put("{}", b)
-				if (i+2)%16==0&&i<line.len-2
+				if (i+2)%16==0&&i<line.len-3
 					std.put("--")
-				elif (i+2)%4==0&&i<line.len-2
+				elif (i+2)%4==0&&i<line.len-3
 					std.put("-")
 				;;
 			;;
