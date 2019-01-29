@@ -15,14 +15,14 @@ const main={args : byte[:][:]
 		][:]
 	])
 
-	for opt in cmd.opts
+	for opt : cmd.opts
 		match opt
 		| ('s', ""):	syl=true
 		| _:	std.die("unreachable\n")
 		;;
 	;;
 
-	for line in bio.byline(input)
+	for line : bio.byline(input)
 		if syl
 			for i=its=0; i<line.len-2; i+=3
 				if its%2==0
